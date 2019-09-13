@@ -1,0 +1,46 @@
+<Page::Header @title="Dashboard" />
+<Page::Content>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div style="float:left; ">
+            <h5 class="card-title">At a glance</h5>
+            <b class="card-text ember-view customers-table" style="margin-left:30px;">
+              {{this.sortProperty.length}}
+            </b>
+            <p>Customer in Pipeline</p>
+          </div>
+          <div style="margin-left:60%">
+            <h5 class="card-title"></h5><br>
+            <b class="card-text ember-view customers-table"> ${{this.totalBudgetSum}}M</b>
+            <p>Total forecasting budget</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Top Prospects</h5>
+          <p class="card-text"></p>
+          <table class="table customers-table">
+            <th>Name</th>
+            <th>Company</th>
+            <th>Budget</th>
+
+            {{#each this.model as |row|}}
+            <tr>
+              <td>{{row.firstName}} {{row.lastName}}</td>
+              <td>{{row.company}}</td>
+              <td>{{row.budget}}</td>
+            </tr>
+
+            {{/each}}
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</Page::Content>
+{{outlet}}

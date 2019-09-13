@@ -1,0 +1,26 @@
+<Page::Header @title="Customers" />
+<Page::Content>
+  <div class="d-flex justify-content-between align-content-center mb-3 form-inline">
+    <h5 class="card-title">
+      {{this.sortedCustomers.length}} Results
+    </h5>
+    {{input type="text"  placeholder="Search..." value=myValue}}
+    <div>
+      <select class="form-control" onchange={{action (mut this.sortProperty) value="target.value"}}>
+        <option value="firstName" selected={{eq this.sortProperty "firstName"}}>
+          Sort by name
+        </option>
+        <option value="budget:desc" selected={{eq this.sortProperty "budget"}}>
+          Sort by budget
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="card">
+    {{#if this.searchData}}
+    <CustomersTable @model={{this.searchData}} />
+    {{else}}
+    <CustomersTable @model={{this.sortedCustomers}} />
+    {{/if}}
+  </div>
+</Page::Content>
