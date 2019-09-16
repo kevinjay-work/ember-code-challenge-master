@@ -18,7 +18,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="customerFirstName">First name</label>
-                <Input @type="text" @pattern="[A-Z a-z (555) 123-4252]{0,}" @class="form-control" @id="customerFirstName" @required={{true}}
+                <Input @type="text" @pattern="[A-Z a-z ]{0,}" @class="form-control" @id="customerFirstName" @required={{true}}
                   @value={{this.model.firstName}} />
               </div>
               <div class="form-group col-md-6">
@@ -35,7 +35,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="customerPhoneNumber">Phone Number</label>
-                <Input @type="phone" @pattern="[(0-9)]{5}[' '][0-9]{3}[-][0-9]{4}" @class="form-control" @id="customerPhoneNumber" placeholder="555 555-5555"
+                <Input @type="phone" @pattern="[(0-9)]{5}[' '][0-9]{3}[-][0-9]{4}" @class="form-control" @id="customerPhoneNumber" placeholder="(555) 555-5555"
                   @required={{true}} @value={{this.model.phoneNumber}} />
               </div>
             </div>
