@@ -12,7 +12,6 @@ export default Controller.extend({
   myValueDidChange: function (e) {
     const search = e.myValue
     let searchedData = this.get('model').filter((customer) => {
-      debugger
       return customer.firstName.toLowerCase().includes(search) || customer.lastName.toLowerCase().includes(search) || customer.company.toLowerCase().includes(search) || customer.project.toLowerCase().includes(search)
     })
     if (!search) {

@@ -10,7 +10,7 @@
         <option value="firstName" selected={{eq this.sortProperty "firstName"}}>
           Sort by name
         </option>
-        <option value="budget:desc" selected={{eq this.sortProperty "budget"}}>
+        <option value="budget:desc" selected={{not-eq this.sortProperty "budget"}}>
           Sort by budget
         </option>
       </select>

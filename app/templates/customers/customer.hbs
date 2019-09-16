@@ -11,7 +11,6 @@
     <div class="col-lg-9">
       <div class="card">
         <div class="card-body">
-         
           <h5 class="text-muted">
             You can modify the customer's basic information here. All fields are required.
           </h5><br>
@@ -19,39 +18,39 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="customerFirstName">First name</label>
-                <Input @type="text" @class="form-control" @id="customerFirstName" @required={{true}}
+                <Input @type="text" @pattern="[A-Z a-z (555) 123-4252]{0,}" @class="form-control" @id="customerFirstName" @required={{true}}
                   @value={{this.model.firstName}} />
               </div>
               <div class="form-group col-md-6">
                 <label for="customerLastName">Last name</label>
-                <Input @type="text" @class="form-control" @id="customerLastName" @required={{true}}
+                <Input @type="text" @pattern="[A-Z a-z ]{0,}" @class="form-control" @id="customerLastName" @required={{true}}
                   @value={{this.model.lastName}} />
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group col-md-7">
+              <div class="form-group col-md-6">
                 <label for="customerEmailAddress">Email</label>
                 <Input @type="email" @class="form-control" @id="customerEmailAddress" @required={{true}}
                   @value={{this.model.emailAddress}} />
               </div>
-              <div class="form-group col-md-5">
+              <div class="form-group col-md-6">
                 <label for="customerPhoneNumber">Phone Number</label>
-                <Input @type="tel" @class="form-control" @id="customerPhoneNumber" placeholder="(555) 555-5555"
+                <Input @type="phone" @pattern="[(0-9)]{5}[' '][0-9]{3}[-][0-9]{4}" @class="form-control" @id="customerPhoneNumber" placeholder="555 555-5555"
                   @required={{true}} @value={{this.model.phoneNumber}} />
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
                 <label for="customerCompany">Company</label>
-                <Input @type="text" @class="form-control" @id="customerCompany" @required={{true}}
+                <Input @type="text" @pattern="[A-Za-z]{0,}" @class="form-control" @id="customerCompany" @required={{true}}
                   @value={{this.model.company}} />
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
                 <label for="customerProject">Project</label>
-                <Input @type="text" @class="form-control" @id="customerProject" @required={{true}}
+                <Input @type="text" @pattern="[A-Z a-z]{0,}" @class="form-control" @id="customerProject" @required={{true}}
                   @value={{this.model.project}} />
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
                 <label for="customerBudget">Budget</label>
                 <Input @type="number" @class="form-control" @id="customerBudget" @required={{true}}
                   @value={{this.model.budget}} />
